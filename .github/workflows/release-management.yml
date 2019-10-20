@@ -1,0 +1,16 @@
+name: Release Management
+
+on:
+  push:
+    tags:
+      - "release-v*"
+
+jobs:
+  update_draft_release:
+    name: Update draft release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release Notary Action
+        uses: commitsar-app/release-notary@v0.3.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PASSWORD }}
