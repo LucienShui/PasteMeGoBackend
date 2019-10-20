@@ -32,11 +32,11 @@ jobs:
 
       - name: Build
         run: |
-          go build -v . pastemed-${{ matrix.os }}
+          go build -v -o pastemed-${{ matrix.os }} .
 
       - name: Upload to release
-          uses: JasonEtco/upload-to-release@master
-          with:
-            args: pastemed-${{ matrix.os }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_PASSWORD }}
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: pastemed-${{ matrix.os }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PASSWORD }}
