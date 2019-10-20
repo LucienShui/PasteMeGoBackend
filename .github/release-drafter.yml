@@ -1,6 +1,0 @@
-branches:
-  - dev
-template: |
-  ## What's Changed
-
-  $CHANGES
