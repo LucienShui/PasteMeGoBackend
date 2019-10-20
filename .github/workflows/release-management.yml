@@ -2,8 +2,8 @@ name: Release Management
 
 on:
   push:
-    branches:
-      - dev
+    tags:
+      - release-v*
 
 jobs:
   update_draft_release:
